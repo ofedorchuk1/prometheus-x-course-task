@@ -1,6 +1,6 @@
 import './App.css';
 import Header from "./components/Header";
-import Signin from "./pages/Signin";
+import SignIn from "./pages/SignIn";
 import {Navigate, Route, Routes} from "react-router-dom";
 import Main from "./pages/Main";
 import FullBook from "./pages/Specific-book";
@@ -77,7 +77,7 @@ function App() {
            </>
        }>
             <Route index element={<Navigate to='/books' replace/>}/>
-            <Route path='/signin' element={<Signin isAuth={isAuth} clickHandler={onUserLogIn}/>}/>
+            <Route path='/login' element={<SignIn isAuth={isAuth} clickHandler={onUserLogIn}/>}/>
             <Route path='/books' element={<ProtectedRoute isAuth={isAuth} content={<Main/>}/>}/>
             <Route path='/books/:id' element={<ProtectedRoute isAuth={isAuth} content={<FullBook/>}/>}/>
             <Route path='/cart' element={<ProtectedRoute isAuth={isAuth} content={<Cart empty={empty} isDisabled={isDisabled}/>}/>}/>
