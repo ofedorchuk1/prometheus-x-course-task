@@ -2,7 +2,7 @@
   "name": "x-course-task",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://ofedorchuk1.github.io/prometheus-x-course-task/#",
+  "homepage": "https://ofedorchuk1.github.io/prometheus-x-course-task",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
