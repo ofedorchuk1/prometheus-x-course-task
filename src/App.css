@@ -1,0 +1,110 @@
+/*reset*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  color: black;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/*styles*/
+
+html{
+  height: 100%;
+}
+body{
+  font-family: Montserrat, sans-serif;
+  height: 100%;
+  color: #5B5B5B;
+}
+
+p{
+  margin: 0;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.error-page{
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+}
+.error-page h1{
+  font-size: 36px;
+  font-weight: bold;
+  padding-top: 10%;
+}
+.btn-style{
+  border: none;
+  background-color: #cee5ff;
+}
+.btn-style:hover{
+  background-color: #94bdef;
+}
+.btn-style:disabled{
+  background-color: #94bdef;
+  cursor: auto;
+}

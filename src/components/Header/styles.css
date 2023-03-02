@@ -1,0 +1,32 @@
+.header-wrapper{
+    border-bottom: 1px solid #cee5ff;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #cee5ff;
+}
+
+.header-title__text{
+    font-weight: bold;
+}
+.header-icons{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.header-icons__cart, .header-icons__avatar{
+    width: 50px;
+}
+.header-icons__avatar{
+    border: 1px solid #cee5ff;
+    border-radius: 50%;
+}
+.header-icons__username{
+    font-weight: bold;
+}
+.btn-sign-out{
+    background: white;
+}

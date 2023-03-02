@@ -1,0 +1,15 @@
+.footer{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    background: #cee5ff;
+}
+.footer__text{
+
+}
+.footer__text--link{
+    color: #5b5b5b;
+    font-weight: bold;
+}
