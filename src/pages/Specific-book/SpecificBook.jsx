@@ -35,7 +35,15 @@ export default function FullBook (){
     function changeHandler (e){
         e.preventDefault()
         let value = e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')
-        value === '' ? setCountValue(1) : setCountValue(value)
+        if (value === ''){
+            setCountValue(1)
+        } else if(value<1){
+            setCountValue(1)
+        } else if(value>42){
+            setCountValue(42)
+        } else{
+            setCountValue(value)
+        }
         setTotalPrice(+(countValue * book.price).toFixed(2))
     }
     function addToCart (id, qt){

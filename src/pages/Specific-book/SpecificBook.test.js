@@ -1,16 +1,19 @@
 import {describe, expect, test} from "@jest/globals";
-import {fireEvent, render, screen, waitFor} from "@testing-library/react";
+import {render, screen, waitFor} from "@testing-library/react";
 import {DataContext} from "../../context/context";
 import FullBook from "./SpecificBook";
 import React from "react";
-import Router, from "react-router-dom";
+import Router from "react-router-dom";
+import userEvent from "@testing-library/user-event";
+
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useParams: jest.fn()
 }));
-describe('Button testing', ()=>{
+describe('Button testing', () => {
     const contextValue = {
-        bookList: [ {"id": 1,
+        bookList: [{
+            "id": 1,
             "author": "David Flanagan",
             "price": 10.99,
             "image": "https://courses.prometheus.org.ua/asset-v1:Ciklum+FEB101+2022_T3+type@asset+block@javascript_the_definitive_guide.jpg",
@@ -22,28 +25,28 @@ describe('Button testing', ()=>{
         setCart: [],
     };
 
-    test('Increment value', async ()=>{
+    test('Increment value', async () => {
 
-        jest.spyOn(Router, 'useParams').mockReturnValue({ id: "1" });
-        render( <DataContext.Provider value={contextValue}>
+        jest.spyOn(Router, 'useParams').mockReturnValue({id: "1"});
+        render(<DataContext.Provider value={contextValue}>
                 <FullBook/>
             </DataContext.Provider>
         )
         const increment = screen.getByTestId('increment')
         const value = screen.getByTestId('value')
         expect(increment).toBeTruthy()
-        await waitFor(()=>{
+        await waitFor(() => {
             expect(value.value).toBe('1')
         })
-        fireEvent.click(increment)
-        await waitFor(()=>{
+        userEvent.click(increment)
+        await waitFor(() => {
             expect(value.value).toBe('2')
         })
 
     })
-    test('Decrement value', async ()=>{
-        jest.spyOn(Router, 'useParams').mockReturnValue({ id: "1" });
-        render( <DataContext.Provider value={contextValue}>
+    test('Decrement value', async () => {
+        jest.spyOn(Router, 'useParams').mockReturnValue({id: "1"});
+        render(<DataContext.Provider value={contextValue}>
                 <FullBook/>
             </DataContext.Provider>
         )
@@ -52,27 +55,26 @@ describe('Button testing', ()=>{
         const decrement = screen.getByTestId('decrement')
         expect(decrement).toBeTruthy()
 
-        await waitFor(()=>{
+        await waitFor(() => {
             expect(value.value).toBe('1')
         })
-        fireEvent.click(increment)
-        await waitFor(()=>{
+        userEvent.click(increment)
+        await waitFor(() => {
             expect(value.value).toBe('2')
         })
-        fireEvent.click(decrement)
-        await waitFor(()=>{
+        userEvent.click(decrement)
+        await waitFor(() => {
             expect(value.value).toBe('1')
         })
     })
 
-    test('changing total price', async()=>{
-        jest.spyOn(Router, 'useParams').mockReturnValue({ id: "1" });
-        render( <DataContext.Provider value={contextValue}>
+    test('changing total price', async () => {
+        jest.spyOn(Router, 'useParams').mockReturnValue({id: "1"});
+        render(<DataContext.Provider value={contextValue}>
                 <FullBook/>
             </DataContext.Provider>
         )
         const increment = screen.getByTestId('increment')
-        const value = screen.getByTestId('value')
         const decrement = screen.getByTestId('decrement')
         const totalPrice = screen.getByTestId('totalPrice')
         const price = screen.getByTestId('price')
@@ -80,22 +82,22 @@ describe('Button testing', ()=>{
         expect(totalPrice).toBeTruthy()
         expect(price).toBeTruthy()
 
-        await waitFor(()=>{
+        await waitFor(() => {
             expect(price.textContent).toBe('10.99')
         })
 
-        fireEvent.click(increment)
-        await waitFor(()=>{
+        userEvent.click(increment)
+        await waitFor(() => {
             expect(totalPrice.textContent).toBe('21.98')
         })
 
-        fireEvent.click(increment)
-        await waitFor(()=>{
+        userEvent.click(increment)
+        await waitFor(() => {
             expect(totalPrice.textContent).toBe('32.97')
         })
 
-        fireEvent.click(decrement)
-        await waitFor(()=>{
+        userEvent.click(decrement)
+        await waitFor(() => {
             expect(totalPrice.textContent).toBe('21.98')
         })
 
