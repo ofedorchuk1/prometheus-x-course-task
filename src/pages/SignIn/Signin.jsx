@@ -1,4 +1,4 @@
-import './style.css'
+import './Signin.css'
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
 import avatar from '../../assests/image/avatar.png'

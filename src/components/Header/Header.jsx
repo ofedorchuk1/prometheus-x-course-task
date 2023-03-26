@@ -1,6 +1,6 @@
 import {Link, Outlet} from "react-router-dom";
-import './styles.css'
-import CartIcon from "../Icons/Cart";
+import './Header.css'
+import CartIcon from "../Icons/CartIcon";
 import avatar from '../../assests/image/avatar.png'
 export default function Header({clickHandler, isAuth, authData}){
 

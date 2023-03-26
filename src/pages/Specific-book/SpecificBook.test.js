@@ -1,9 +1,9 @@
 import {describe, expect, test} from "@jest/globals";
 import {fireEvent, render, screen, waitFor} from "@testing-library/react";
-import {DataContext} from "../../context";
-import FullBook from "./index";
+import {DataContext} from "../../context/context";
+import FullBook from "./SpecificBook";
 import React from "react";
-import Router, {useParams} from "react-router-dom";
+import Router, from "react-router-dom";
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useParams: jest.fn()

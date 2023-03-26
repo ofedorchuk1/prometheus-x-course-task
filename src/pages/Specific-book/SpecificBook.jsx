@@ -1,6 +1,6 @@
-import './style.css'
+import './SpecificBook.css'
 import {useContext, useEffect, useState} from "react";
-import {DataContext} from "../../context";
+import {DataContext} from "../../context/context";
 import {useParams} from "react-router-dom";
 import imageNotFound from '../../assests/image/imageNotFound.png'
 

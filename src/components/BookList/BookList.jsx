@@ -1,4 +1,4 @@
-import Book from "../Book";
+import Book from "../Book/Book";
 
 export default function BookList ({listItem, clickView, value, targetSelect}){
 

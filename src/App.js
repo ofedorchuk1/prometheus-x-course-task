@@ -1,15 +1,15 @@
 import './App.css';
-import Header from "./components/Header";
-import SignIn from "./pages/SignIn";
+import Header from "./components/Header/Header";
+import SignIn from "./pages/SignIn/Signin";
 import {Navigate, Route, Routes} from "react-router-dom";
-import Main from "./pages/Main";
-import FullBook from "./pages/Specific-book";
-import Footer from "./components/Footer";
-import Cart from "./pages/Cart";
+import Main from "./pages/Main/Main";
+import FullBook from "./pages/Specific-book/SpecificBook";
+import Footer from "./components/Footer/Footer";
+import Cart from "./pages/Cart/Cart";
 import {useEffect, useState} from "react";
-import ProtectedRoute from "./components/ProtectedRoute";
-import PageNotFound from "./pages/PageNotFound";
-import {DataContext} from "./context";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import {DataContext} from "./context/context";
 import data from "./books.json"
 function App() {
 
@@ -39,10 +39,6 @@ function App() {
     const [isDisabled, setIsDisabled] =useState(true)
 
     useEffect(()=>{
-        // fetch('/data.json')
-        //     .then(r => r.json())
-        //     .then(res => {
-        //         setBookList(res.books)})
         setBookList(data.books)
     }, [])
     useEffect(()=>{

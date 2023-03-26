@@ -1,6 +1,6 @@
-import BookList from "../../components/BookList";
-import './styles.css'
-import {DataContext} from "../../context";
+import BookList from "../../components/BookList/BookList";
+import './Main.css'
+import {DataContext} from "../../context/context";
 import {useContext, useState} from "react";
 export default function Main (){
     const {bookList} = useContext(DataContext)

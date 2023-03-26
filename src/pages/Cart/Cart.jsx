@@ -1,8 +1,8 @@
-import './style.css'
-import CartIcon from "../../components/Icons/Cart";
-import CartItem from "../../components/CartList";
+import './Cart.css'
+import CartIcon from "../../components/Icons/CartIcon";
+import CartItem from "../../components/CartList/CartList";
 import {useContext, useEffect, useState} from "react";
-import {DataContext} from "../../context";
+import {DataContext} from "../../context/context";
 export default function Cart ({empty, isDisabled}){
     const {cart, setCart} = useContext(DataContext)
     const [total, setTotal] = useState(0)
